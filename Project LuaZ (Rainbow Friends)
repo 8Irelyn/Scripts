@@ -1,0 +1,178 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+
+
+local Window = OrionLib:MakeWindow({Name = "Project LuaZ", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+
+
+
+local Credits = Window:MakeTab({
+	Name = "Credits",
+	Icon = "rbxassetid://0",
+	PremiumOnly = false
+})
+local Main = Window:MakeTab({
+	Name = "Main",
+	Icon = "rbxassetid://0",
+	PremiumOnly = false
+})
+
+local Teleports = Window:MakeTab({
+	Name = "Teleports",
+	Icon = "rbxassetid://0",
+	PremiumOnly = false
+})
+
+local Settings = Window:MakeTab({
+	Name = "Settings",
+	Icon = "rbxassetid://0",
+	PremiumOnly = false
+})
+
+local AreaOne = Main:AddSection({
+	Name = "Area 1 (Blue)"
+})
+
+local AreaTwo = Main:AddSection({
+	Name = "Area 2 (Blue & Green)"
+})
+
+local MainTeleports = Teleports:AddSection({
+	Name = "Main Areas"
+})
+
+Credits:AddLabel("Thanks for using my script!")
+Credits:AddLabel("Current Developers --")
+Credits:AddLabel("- Aiden")
+
+
+AreaOne:AddButton({
+	Name = "GetAllBlocks",
+	Callback = function()
+      	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(game.Workspace.Block1.TouchTrigger.Position)
+wait(.3)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(game.Workspace.Block2.TouchTrigger.Position)
+wait(.3)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(game.Workspace.Block3.TouchTrigger.Position)
+wait(.3)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(game.Workspace.Block4.TouchTrigger.Position)
+wait(.3)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(game.Workspace.Block5.TouchTrigger.Position)
+wait(.3)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(game.Workspace.Block6.TouchTrigger.Position)
+wait(.3)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(game.Workspace.Block7.TouchTrigger.Position)
+wait(.3)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(game.Workspace.Block8.TouchTrigger.Position)
+wait(.3)
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(game.Workspace.Block9.TouchTrigger.Position)
+wait(.3)
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(game.Workspace.Block10.TouchTrigger.Position)
+	wait(.3)
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(game.Workspace.GroupBuildStructures.BlockTower.Block3.Position)
+	wait(.7)
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(game.Workspace.Block11.TouchTrigger.Position)
+	wait(.4)
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(game.Workspace.Block12.TouchTrigger.Position)
+	wait(.3)
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(game.Workspace.Block13.TouchTrigger.Position)
+	wait(.3)
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(game.Workspace.Block14.TouchTrigger.Position)
+	wait(.3)
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(game.Workspace.Block15.TouchTrigger.Position)
+	wait(.3)
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(game.Workspace.Block16.TouchTrigger.Position)
+	wait(.3)
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(game.Workspace.Block17.TouchTrigger.Position)
+	wait(.3)
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(game.Workspace.Block18.TouchTrigger.Position)
+	wait(.3)
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(game.Workspace.Block19.TouchTrigger.Position)
+	wait(.3)
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(game.Workspace.Block20.TouchTrigger.Position)
+	wait(.3)
+	
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(game.Workspace.GroupBuildStructures.BlockTower.Block3.Position)
+	wait(.7)
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(game.Workspace.Block21.TouchTrigger.Position)
+	wait(.3)
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(game.Workspace.Block22.TouchTrigger.Position)
+	wait(.3)
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(game.Workspace.Block23.TouchTrigger.Position)
+	wait(.3)
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(game.Workspace.Block24.TouchTrigger.Position)
+	wait(.3)
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(game.Workspace.GroupBuildStructures.BlockTower.Block3.Position)
+  	end
+})
+
+AreaOne:AddButton({
+	Name = "Highlight Blocks",
+	Callback = function()
+      	for i,v in pairs(game.Workspace:GetChildren()) do
+      		if v.Name:find("Block") then
+      			local Highlight = Instance.new("Highlight")
+      			
+      			Highlight:Clone().Parent = v
+			end
+		end
+  	end
+})
+
+AreaTwo:AddButton({
+	Name = "Highlight Food Packs",
+	Callback = function()
+      	for i,v in pairs(game.Workspace:GetDescendants()) do
+      		if v:IsA("MeshPart") and v.Parent:FindFirstChild("TouchTrigger") then
+      			
+      			local Highlight = Instance.new("Highlight")
+      			
+      			Highlight:Clone().Parent = v
+      			
+			end
+		end
+  	end
+})
+
+
+Main:AddButton({
+	Name = "ESP",
+	Callback = function()
+      	for i,v in pairs(game.Workspace.Monsters:GetDescendants()) do
+			local highlight = Instance.new("Highlight")
+			
+			highlight.Parent = v
+			highlight.Adornee = v
+		end
+  	end
+})
+
+MainTeleports:AddButton({
+	Name = "Spawn",
+	Callback = function()
+      	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(188.8,32,276.64965)
+  	end
+})
+
+MainTeleports:AddButton({
+	Name = "Theatre",
+	Callback = function()
+      	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(360.627,42,124.1853)
+  	end
+})
+
+Settings:AddButton({
+	Name = "DELETEGUI",
+	Callback = function()
+      	OrionLib:Destroy()
+  	end
+})
+
+OrionLib:Init()
+wait(3)
+
+OrionLib:MakeNotification({
+	Name = "Credits",
+	Content = "Hey! Thanks for using my script! - Aiden",
+	Image = "rbxassetid://6431340102",
+	Time = 5
+})
