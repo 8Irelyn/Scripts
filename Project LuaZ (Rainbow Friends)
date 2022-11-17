@@ -1,3 +1,6 @@
+-- CTRL A  Will Highlight everything. Then  CTRL C  and then  CTRL V  in Executor
+-- Join us in our newly growing community:  https://discord.gg/QyQAqQss2R
+
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 
 
@@ -28,6 +31,18 @@ local Settings = Window:MakeTab({
 	PremiumOnly = false
 })
 
+Main:AddButton({
+	Name = "ESP",
+	Callback = function()
+      	for i,v in pairs(game.Workspace.Monsters:GetDescendants()) do
+			local highlight = Instance.new("Highlight")
+			
+			highlight.Parent = v
+			highlight.Adornee = v
+		end
+  	end
+})
+
 local AreaOne = Main:AddSection({
 	Name = "Area 1 (Blue)"
 })
@@ -36,14 +51,38 @@ local AreaTwo = Main:AddSection({
 	Name = "Area 2 (Blue & Green)"
 })
 
+local AreaThree = Main:AddSection({
+	Name = "Area 3 (Blue & Green & Purple & Orange)"
+})
+
+local AreaFour = Main:AddSection({
+	Name = "Area 4 (All Monsters + No Light)"
+})
+
+local Finale = Main:AddSection({
+	Name = "Area 5 (FINALE)"
+})
+
 local MainTeleports = Teleports:AddSection({
 	Name = "Main Areas"
 })
 
 Credits:AddLabel("Thanks for using my script!")
 Credits:AddLabel("Current Developers --")
-Credits:AddLabel("- Aiden")
+Credits:AddLabel("- YeN")
 
+
+Main:AddButton({
+	Name = "ESP",
+	Callback = function()
+      	for i,v in pairs(game.Workspace.Monsters:GetDescendants()) do
+			local highlight = Instance.new("Highlight")
+			
+			highlight.Parent = v
+			highlight.Adornee = v
+		end
+  	end
+})
 
 AreaOne:AddButton({
 	Name = "GetAllBlocks",
@@ -118,6 +157,45 @@ AreaOne:AddButton({
   	end
 })
 
+
+AreaTwo:AddButton({
+	Name = "Get All Food Packs",
+	Callback = function()
+		local HumRootPart = game.Players.LocalPlayer.Character.HumanoidRootPart
+      	HumRootPart.CFrame = CFrame.new(game.Workspace:FindFirstChild("FoodGreen").TouchTrigger.Position)
+      	wait(.3)
+      	HumRootPart.CFrame = CFrame.new(game.Workspace:FindFirstChild("FoodGreen").TouchTrigger.Position)
+      	wait(.3)
+      	HumRootPart.CFrame = CFrame.new(game.Workspace:FindFirstChild("FoodGreen").TouchTrigger.Position)
+      	wait(.3)
+      	HumRootPart.CFrame = CFrame.new(game.Workspace:FindFirstChild("FoodGreen").TouchTrigger.Position)
+      	wait(.3)
+      	HumRootPart.CFrame = CFrame.new(game.Workspace:FindFirstChild("FoodGreen").TouchTrigger.Position)
+      	wait(.3)
+      	HumRootPart.CFrame = CFrame.new(game.Workspace:FindFirstChild("FoodOrange").TouchTrigger.Position)
+      	wait(.3)
+      	HumRootPart.CFrame = CFrame.new(game.Workspace:FindFirstChild("FoodOrange").TouchTrigger.Position)
+      	wait(.3)
+      	HumRootPart.CFrame = CFrame.new(game.Workspace:FindFirstChild("FoodOrange").TouchTrigger.Position)
+      	wait(.3)
+      	HumRootPart.CFrame = CFrame.new(game.Workspace:FindFirstChild("FoodOrange").TouchTrigger.Position)
+      	wait(.3)
+      	HumRootPart.CFrame = CFrame.new(game.Workspace:FindFirstChild("FoodOrange").TouchTrigger.Position)
+      	wait(.3)
+      	HumRootPart.CFrame = CFrame.new(game.Workspace.GroupBuildStructures.FoodCounter.FoodTubeDispenserOrange.DropTray.Position)
+      	wait(.8)
+      	HumRootPart.CFrame = CFrame.new(game.Workspace:FindFirstChild("FoodPink").TouchTrigger.Position)
+      	wait(.3)
+      	HumRootPart.CFrame = CFrame.new(game.Workspace:FindFirstChild("FoodPink").TouchTrigger.Position)
+      	wait(.3)
+      	HumRootPart.CFrame = CFrame.new(game.Workspace:FindFirstChild("FoodPink").TouchTrigger.Position)
+      	wait(.3)
+      	HumRootPart.CFrame = CFrame.new(game.Workspace:FindFirstChild("FoodPink").TouchTrigger.Position)
+      	wait(.3)
+      	HumRootPart.CFrame = CFrame.new(game.Workspace.GroupBuildStructures.FoodCounter.FoodTubeDispenserOrange.DropTray.Position)
+  	end
+})
+
 AreaTwo:AddButton({
 	Name = "Highlight Food Packs",
 	Callback = function()
@@ -133,15 +211,91 @@ AreaTwo:AddButton({
   	end
 })
 
-
-Main:AddButton({
-	Name = "ESP",
+AreaThree:AddButton({
+	Name = "GetAllFuses",
 	Callback = function()
-      	for i,v in pairs(game.Workspace.Monsters:GetDescendants()) do
-			local highlight = Instance.new("Highlight")
-			
-			highlight.Parent = v
-			highlight.Adornee = v
+      	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(game.Workspace.Fuse1.TouchTrigger.Position)
+wait(.3)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(game.Workspace.Fuse2.TouchTrigger.Position)
+wait(.3)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(game.Workspace.Fuse3.TouchTrigger.Position)
+wait(.3)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(game.Workspace.Fuse4.TouchTrigger.Position)
+wait(.3)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(game.Workspace.Fuse5.TouchTrigger.Position)
+wait(.3)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(game.Workspace.Fuse6.TouchTrigger.Position)
+wait(.3)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(game.Workspace.Fuse7.TouchTrigger.Position)
+wait(.3)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(game.Workspace.Fuse8.TouchTrigger.Position)
+wait(.3)
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(game.Workspace.Fuse9.TouchTrigger.Position)
+wait(.3)
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(game.Workspace.Fuse10.TouchTrigger.Position)
+	wait(.3)
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(game.Workspace.GroupBuildStructures.FuseBoard.Fuse14.color.Position)
+	wait(.7)
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(game.Workspace.Fuse11.TouchTrigger.Position)
+	wait(.4)
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(game.Workspace.Fuse12.TouchTrigger.Position)
+	wait(.3)
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(game.Workspace.Fuse13.TouchTrigger.Position)
+	wait(.3)
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(game.Workspace.Fuse14.TouchTrigger.Position)
+	wait(.3)
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(game.Workspace.GroupBuildStructures.FuseBoard.Fuse14.color.Position)
+  	end
+})
+
+AreaThree:AddButton({
+	Name = "Highlight Fuses",
+	Callback = function()
+      	for i,v in pairs(game.Workspace:GetChildren()) do
+      		if v.Name:find("Fuse") then
+      			local Highlight = Instance.new("Highlight")
+      			
+      			Highlight:Clone().Parent = v
+			end
+		end
+  	end
+})
+
+AreaFour:AddButton({
+	Name = "Get All Batteries",
+	Callback = function()
+		local HumRootPart = game.Players.LocalPlayer.Character.HumanoidRootPart
+      	HumRootPart.CFrame = CFrame.new(game.Workspace:FindFirstChild("Battery").TouchTrigger.Position)
+      	wait(.3)
+      	HumRootPart.CFrame = CFrame.new(game.Workspace:FindFirstChild("Battery").TouchTrigger.Position)
+      	wait(.3)
+      	HumRootPart.CFrame = CFrame.new(game.Workspace:FindFirstChild("Battery").TouchTrigger.Position)
+      	wait(.3)
+      	HumRootPart.CFrame = CFrame.new(game.Workspace:FindFirstChild("Battery").TouchTrigger.Position)
+      	wait(.3)
+      	HumRootPart.CFrame = CFrame.new(game.Workspace:FindFirstChild("Battery").TouchTrigger.Position)
+      	wait(.3)
+      	HumRootPart.CFrame = CFrame.new(game.Workspace:FindFirstChild("Battery").TouchTrigger.Position)
+      	wait(.3)
+      	HumRootPart.CFrame = CFrame.new(game.Workspace:FindFirstChild("Battery").TouchTrigger.Position)
+      	wait(.3)
+      	HumRootPart.CFrame = CFrame.new(game.Workspace:FindFirstChild("Battery").TouchTrigger.Position)
+      	wait(.3)
+      	HumRootPart.CFrame = CFrame.new(game.Workspace:FindFirstChild("Battery").TouchTrigger.Position)
+      	wait(.3)
+      	HumRootPart.CFrame = CFrame.new(game.Workspace.GroupBuildStructures.BatteryBox.BatteryEffect.Position)
+  	end
+})
+
+AreaFour:AddButton({
+	Name = "Highlight Baterries",
+	Callback = function()
+      	for i,v in pairs(game.Workspace:GetChildren()) do
+      		if v.Name:find("Battery") then
+      			local Highlight = Instance.new("Highlight")
+      			
+      			Highlight:Clone().Parent = v
+			end
 		end
   	end
 })
@@ -160,6 +314,13 @@ MainTeleports:AddButton({
   	end
 })
 
+MainTeleports:AddButton({
+	Name = "Sub-Level",
+	Callback = function()
+      	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(313.8658,9,149.225)
+  	end
+})
+
 Settings:AddButton({
 	Name = "DELETEGUI",
 	Callback = function()
@@ -172,7 +333,7 @@ wait(3)
 
 OrionLib:MakeNotification({
 	Name = "Credits",
-	Content = "Hey! Thanks for using my script! - Aiden",
+	Content = "Hey! Thanks for using my script! - YeN",
 	Image = "rbxassetid://6431340102",
-	Time = 5
+	Time = 7
 })
