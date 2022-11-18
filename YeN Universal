@@ -1,0 +1,79 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+
+local Window = OrionLib:MakeWindow({Name = "YeN Universal", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+
+local Player = Window:MakeTab({
+	Name = "Player",
+	Icon = "rbxassetid://0",
+	PremiumOnly = false
+})
+
+local Other = Window:MakeTab({
+	Name = "Other",
+	Icon = "rbxassetid://0",
+	PremiumOnly = false
+})
+
+Player:AddSlider({
+	Name = "Walkspeed",
+	Min = 16,
+	Max = 200,
+	Default = 16,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 1,
+	ValueName = "speed",
+	Callback = function(Value)
+		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
+	end    
+})
+
+Player:AddSlider({
+	Name = "Jumppower",
+	Min = 50,
+	Max = 1000,
+	Default = 50,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 1,
+	ValueName = "jumppower",
+	Callback = function(Value)
+		game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
+	end    
+})
+
+Player:AddButton({
+	Name = "Float",
+	Callback = function()
+      	game.Players.LocalPlayer.Character.Humanoid.HipHight = 10
+  	end
+})
+
+Other:AddButton({
+	Name = "Btools",
+	Callback = function()
+      	loadstring(game:HttpGet(('https://pastebin.com/raw/LETNPL0E')))()
+  	end
+})
+
+Other:AddButton({
+	Name = "Player ESP",
+	Callback = function()
+      	loadstring(game:HttpGet(('https://pastebin.com/raw/nqyGkWvx')))()
+  	end
+})
+
+
+Other:AddTextbox({
+	Name = "Teleport To Player",
+	Default = "Player's Exact Username",
+	TextDisappear = true,
+	Callback = function(Value)
+		if game.Players..Value then
+			local Oplr = game.Players..Value
+			local OplrPart = Oplr.Character.HumanoidRootPart
+			
+			game.Player.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(OplrPart.Position.X, OplrPart.Position.Y + 2, OplrPart.Position.Z)
+		end
+	end	  
+})
+
+OrionLib:Init()
