@@ -1,0 +1,149 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+
+
+
+
+
+
+
+
+
+
+local Window = OrionLib:MakeWindow({Name = "YeN Anomic", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+
+local Player = Window:MakeTab({
+	Name = "Player",
+	Icon = "rbxassetid://0",
+	PremiumOnly = false
+})
+
+local Combat = Window:MakeTab({
+	Name = "Combat",
+	Icon = "rbxassetid://0",
+	PremiumOnly = false
+})
+
+local Teleports = Window:MakeTab({
+	Name = "Teleports",
+	Icon = "rbxassetid://0",
+	PremiumOnly = false
+})
+
+local AutoFarm = Window:MakeTab({
+	Name = "AutoFarm",
+	Icon = "rbxassetid://0",
+	PremiumOnly = false
+})
+
+local Other = Window:MakeTab({
+	Name = "Other",
+	Icon = "rbxassetid://0",
+	PremiumOnly = false
+})
+
+Player:AddSlider({
+	Name = "Walkspeed",
+	Min = 16,
+	Max = 60,
+	Default = 16,
+	Color = Color3.fromRGB(0,0,255),
+	Increment = 1,
+	ValueName = "speed",
+	Callback = function(Value)
+		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
+	end    
+})
+
+Player:AddSlider({
+	Name = "Jumppower",
+	Min = 50,
+	Max = 450,
+	Default = 50,
+	Color = Color3.fromRGB(0,255,0),
+	Increment = 1,
+	ValueName = "jumppower",
+	Callback = function(Value)
+		game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
+	end    
+})
+
+Combat:AddToggle({
+	Name = "Player ESP",
+	Default = false,
+	Callback = function(Value)
+		if Value == true then
+			for i,v in pairs(game.Players:GetChildren()) do
+				local ESP = Instance.new("Highlight")
+				ESP.Name = "98y539058378"
+				ESP.FillColor = Color3.new(0, 0, 255)
+				ESP.Parent = v.Character
+			end
+		else
+			for i,v in pairs(game.Workspace.PlayerCharacter:GetDescendants()) do
+					if v:IsA("Highlight") then
+						v:Destroy()
+					end
+				end
+	end
+})
+
+
+
+Teleports:AddButton({
+	Name = "Ridvine Hideout",
+	Callback = function()
+      	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(651.742, 7.326, 1290.64)
+  	end
+})
+
+Teleports:AddButton({
+	Name = "City Gas Sation",
+	Callback = function()
+      	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(2531.41577, 114.16067, 2678.138183)
+  	end
+})
+
+Teleports:AddButton({
+	Name = "City Hideout",
+	Callback = function()
+      	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(3168.32666, 145.94618, 2084.39624)
+  	end
+})
+
+Teleports:AddButton({
+	Name = "Caves",
+	Callback = function()
+      	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(2117.9399414, 77.0548858, -96.821617)
+  	end
+})
+
+Other:AddButton({
+	Name = "Teleport to Random Player Drop",
+	Callback = function()
+      	for i,v in pairs(game.Workspace.Drops:GetChildren()) do
+      		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(v.MainPart.Position)
+		end
+  	end
+})
+
+Other:AddButton({
+	Name = "Destroy Trespassing Areas",
+	Callback = function()
+      	for i,v in pairs(game.Workspace.TrespassingAreas:GetChildren()) do
+      		v:Destroy()
+		end
+  	end
+})
+
+Other:AddButton({
+	Name = "Update Player Drop ESP",
+	Callback = function()
+      	for i,v in pairs(game.Workspace.Drops:GetChildren()) do
+      		local Highlight = Instance.new("Highlight")
+      		
+      		Highlight.Parent = v
+		end
+  	end
+})
+
+OrionLib:Init()
