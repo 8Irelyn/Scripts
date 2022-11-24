@@ -193,7 +193,7 @@ Lighting:AddSlider({
 	Name = "Brightness",
 	Min = 0,
 	Max = 150,
-	Default = 2,
+	Default = 0,
 	Color = Color3.fromRGB(200,165,255),
 	Increment = 1,
 	ValueName = "Intensity",
